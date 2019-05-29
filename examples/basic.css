@@ -245,6 +245,9 @@
   color: #999;
 }
 .rmc-calendar .date-picker {
+  -ms-flex: auto;
+      flex: auto;
+  min-height: 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
