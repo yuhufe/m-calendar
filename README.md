@@ -24,15 +24,15 @@ React Mobile Calendar Component (web)
 [download-image]: https://img.shields.io/npm/dm/rmc-calendar.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rmc-calendar
 
-## Screenshots
+## 说明
 
-<!-- <img src="https://os.alipayobjects.com/rmsportal/fOaDvpIJukLYznc.png" width="288"/> -->
-
+rmc-calendar上面解了几个bug
+1. chrome模拟设备无法滚动
 
 ## Development
 
 ```
-npm i 
+npm i
 npm start
 ```
 
@@ -126,6 +126,8 @@ interface PropsType {
     // DatePicker Component
     /** default date for show, default: today */
     defaultDate?: Date;
+    /** 默认选择日期，defaultDate用来设置默认展示的月份 */
+    defaultValue?: [Date, Date];
     /** extra info of date */
     getDateExtra?: (date: Date) => DateModels.ExtraData;
     /** infinite scroll, default: true */
