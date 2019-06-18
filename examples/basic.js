@@ -1658,6 +1658,10 @@ var DatePicker = function (_Component) {
                         top: evt.currentTarget.scrollTop
                     });
                 };
+                dom.addEventListener('touchstart', _this.touchHandler.onTouchStart, { passive: false });
+                dom.addEventListener('touchmove', _this.touchHandler.onTouchMove, { passive: false });
+                dom.addEventListener('touchend', _this.touchHandler.onTouchEnd, { passive: false });
+                dom.addEventListener('touchcancel', _this.touchHandler.onTouchCancel, { passive: false });
             }
         };
         _this.setPanel = function (dom) {
@@ -1679,7 +1683,7 @@ var DatePicker = function (_Component) {
                     if (isReachTop) {
                         delta = evt.touches[0].screenY - lastY;
                         if (delta > 0) {
-                            evt.preventDefault();
+                            evt.cancelable !== false && evt.preventDefault();
                             if (delta > 80) {
                                 delta = 80;
                             }
@@ -1747,7 +1751,7 @@ var DatePicker = function (_Component) {
                 { className: 'wrapper', style: {
                         overflowX: 'hidden',
                         overflowY: 'visible'
-                    }, ref: this.setLayout, onTouchStart: this.touchHandler.onTouchStart, onTouchMove: this.touchHandler.onTouchMove, onTouchEnd: this.touchHandler.onTouchEnd, onTouchCancel: this.touchHandler.onTouchCancel },
+                    }, ref: this.setLayout },
                 __WEBPACK_IMPORTED_MODULE_3_react__["createElement"](
                     'div',
                     { style: style, ref: this.setPanel },
