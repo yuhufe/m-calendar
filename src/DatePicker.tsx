@@ -56,6 +56,11 @@ export default class DatePicker extends Component {
           top: (evt.currentTarget as HTMLDivElement).scrollTop,
         });
       };
+
+      dom.addEventListener('touchstart', this.touchHandler.onTouchStart, { passive: false });
+      dom.addEventListener('touchmove', this.touchHandler.onTouchMove, { passive: false });
+      dom.addEventListener('touchend', this.touchHandler.onTouchEnd, { passive: false });
+      dom.addEventListener('touchcancel', this.touchHandler.onTouchCancel, { passive: false });
     }
   }
 
@@ -70,11 +75,11 @@ export default class DatePicker extends Component {
     let delta = initDelta;
 
     return {
-      onTouchStart: (evt: React.TouchEvent<HTMLDivElement>) => {
+      onTouchStart: (evt: any) => {
         lastY = evt.touches[0].screenY;
         delta = initDelta;
       },
-      onTouchMove: (evt: React.TouchEvent<HTMLDivElement>) => {
+      onTouchMove: (evt: any) => {
         const ele = evt.currentTarget;
         const isReachTop = ele.scrollTop === 0;
 
@@ -143,11 +148,7 @@ export default class DatePicker extends Component {
         <div className="wrapper" style={{
           overflowX: 'hidden',
           overflowY: 'visible',
-        }} ref={this.setLayout}
-          onTouchStart={this.touchHandler.onTouchStart}
-          onTouchMove={this.touchHandler.onTouchMove}
-          onTouchEnd={this.touchHandler.onTouchEnd}
-          onTouchCancel={this.touchHandler.onTouchCancel}>
+        }} ref={this.setLayout}>
           <div style={style} ref={this.setPanel}>
             {
               this.canLoadPrev() && <div className="load-tip">{locale.loadPrevMonth}</div>
