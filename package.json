@@ -8,10 +8,10 @@
     "react-m-calendar",
     "m-calendar"
   ],
-  "homepage": "https://github.com/react-component/m-calendar",
+  "homepage": "https://github.com/defghy/m-calendar",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-component/m-calendar.git"
+    "url": "https://github.com/defghy/m-calendar.git"
   },
   "bugs": {
     "url": "https://github.com/react-component/m-calendar/issues"
