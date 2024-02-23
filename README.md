@@ -1,7 +1,7 @@
 # rmc-calendar
 ---
 
-源自[React Mobile Calendar Component (web)](https://github.com/react-component/m-calendar)
+Fork[React Mobile Calendar Component (web)](https://github.com/react-component/m-calendar)
 
 ## 说明
 
